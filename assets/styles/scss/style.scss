@@ -1,0 +1,203 @@
+@font-face {
+  font-family: 'Digital Numbers Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Digital Numbers Regular'), url('../../fonts/DigitalNumbers-Regular.woff') format('woff');
+} // The most appropriate font for the counter.
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center; //Since the page contains only an element, I changed the style of the body itself.
+  flex-direction: column;
+
+  font-family: 'Digital Numbers Regular', 'sans-serif';
+  background: linear-gradient(to right, hsl(0, 1%, 82%), hsl(175, 27%, 91%));
+  touch-action: manipulation; //Disable double tap to zoom on Mobile (Quickly pressing button does it)
+
+  padding-bottom: 20px; //Move the footer a little higher
+}
+
+.counter-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  border: 2px solid black;
+  border-radius: 20px;
+
+  margin-top: 8vh;
+
+  width: auto;
+  height: auto;
+
+  min-width: 350px;
+  min-height: 200px;
+  background-color: #b6a6cf;
+
+  .restart-button {
+    position: absolute;
+    background-image: url("../../img/icons/restart-icon.png");
+    background-repeat: no-repeat;
+
+    width: 22px;
+    height: 22px;
+
+    background-size: contain;
+    right: 7px;
+    top: 7px;
+
+    border: none;
+    background-color: transparent;
+  }
+
+  .counter-display {  
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap; 
+
+    font-size: 70px;
+    width: auto;
+    min-width: 270px;
+    max-width: 90vw;
+
+    padding: 15px 0px 15px 0px;
+
+    border-radius: 10px;
+    background-color: white;
+  }
+}
+
+.buttons-container {
+  margin-top: 20px;
+  border: 2px solid black;
+  background-color: whitesmoke;
+  border-radius: 13px;
+  width: 350px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  user-select: none;
+
+  .minus-button {
+    margin-left: 10px;
+    margin-right: 5px;
+    background-image: url("../../img/icons/minus-icon.png");
+    background-repeat: no-repeat;
+    align-self: center;
+
+    width: 44px;
+    height: 44px;
+
+    background-size: contain;
+
+    border: none;
+    background-color: transparent;
+  }
+
+  .counter-title {
+    text-align: center;
+    align-self: center;
+    font-size: 18px;
+  }
+
+  .plus-button {
+    margin-right: 10px;
+    margin-right: 5px;
+    background-image: url("../../img/icons/plus-icon.png");
+    background-repeat: no-repeat;
+
+    width: 50px;
+    height: 50px;
+    
+    align-self: center;
+    background-size: contain;
+
+    border: none;
+    background-color: transparent;
+  }
+}
+
+footer {
+  position: absolute; // Since we changed body position, this is needed to place footer at the bottom
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  	
+  border-radius: 50px;
+  border: 1px solid black;
+  color: black;
+  padding: 10px;
+  
+  p {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+}  
+
+/*---------------------
+      ANIMATIONS 
+----------------------*/
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+/*-------------------------
+      MEDIA RULES
+--------------------------*/
+@media 
+only screen and (max-height: 430px), 
+only screen and (max-width: 204px) and (max-height: 560px) //If the width is decreased, the elements wraps so they could overlap.
+{
+  footer {
+    position: initial; // position: absolute would overlap other elements (e.g. when a user uses it on mobile landscape mode)
+    width: 92.5%;
+    margin-top: 20px;
+  }
+}
+
+@media only screen and (max-width: 360px)
+{
+  .counter-container{
+    min-width: auto;
+
+    .counter-display {
+      min-width: auto;
+      width: 75vw;
+      font-size: 50px;
+
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+  }
+
+  .buttons-container {
+    width: auto;
+  }
+}
+
+@media only screen and (max-width: 204px) { // This is needed for iPad on slide over mode, where the screen can be really narrow.
+  .buttons-container {
+    flex-wrap: wrap-reverse; //Make sure to always have the + button at the top
+    justify-content: center;
+
+    .minus-button,
+    .plus-button {
+      margin: 0;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+}
