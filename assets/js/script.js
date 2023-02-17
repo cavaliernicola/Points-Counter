@@ -86,7 +86,7 @@ htmlElements.forEach(item => {
   element.setAttribute('class', item.class ?? "");
   for (let ch of item.children) {
     let children = document.createElement(ch.element)
-    children.setAttribute('class', ch.class);
+    children.setAttribute('class', ch.class ?? "");
     children.innerHTML = ch.content ?? "";
     element.appendChild(children)
   }
