@@ -27,7 +27,7 @@ You can try this simple app [HERE](https://tangerine-babka-eeeee1.netlify.app/)!
 Alternatively, you can [download](https://github.com/cavaliernicola/Points-Counter/archive/refs/heads/main.zip) the project folder on your device and open the [`index.html`](index.html) file.
 
 ## License
-Distributed under the MIT License. See [`LICENSE`](license) for more information.
+Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information.
 
 ## Contact Me
 Nicola Cavalier - cavaliernicola@gmail.com
