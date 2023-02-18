@@ -30,4 +30,5 @@ Alternatively, you can [download](https://github.com/cavaliernicola/Points-Count
 Distributed under the MIT License. See [`LICENSE`](LICENSE) for more information.
 
 ## Contact Me
-Nicola Cavalier - cavaliernicola@gmail.com
+* Author: Nicola Cavalier 
+* Email: cavaliernicola@gmail.com
