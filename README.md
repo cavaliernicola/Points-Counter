@@ -1,5 +1,4 @@
 # Points Counter
----
 
 ## Table of Contents
 * [Description](#description)
