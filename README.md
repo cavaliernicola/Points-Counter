@@ -5,7 +5,7 @@
 * [Languages](#languages)
 * [Try It!](#try-it)
 * [License](#license)
-* [Author](#author)
+* [Contact Me](#contact-me)
 
 ## Description
 This is my first JavaScript project, the app is basically a counter that can be used to keep tracks of points.
